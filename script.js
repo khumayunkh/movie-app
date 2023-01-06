@@ -19,8 +19,20 @@ previous.addEventListener('click', (e)=>{
   e.preventDefault();
 
   const apihUrl = `${BASE_API}${page}`;
-  if (page<=5 && page>=1) {
+  if (page<=5 && page>1) {
     page--
+    getMovies(apihUrl);
+    console.log(page)
+    console.log(apihUrl)
+  }
+})
+
+next.addEventListener('click', (e)=>{
+  e.preventDefault();
+
+  const apihUrl = `${BASE_API}${page}`;
+  if (page<5 && page>=1) {
+    page++
     getMovies(apihUrl);
     console.log(page)
     console.log(apihUrl)
