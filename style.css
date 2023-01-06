@@ -9,8 +9,16 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.container {
-  max-width: 1200px;
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.movie_container {
+  max-width: 80%;
   margin: 0 auto;
 }
 
@@ -121,4 +129,31 @@ body {
 
 .movie__average--red {
   border: 1px solid red;
+}
+
+
+.pagination{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 12rem;
+  color: white;
+}
+
+.pagination_btn1{
+  border: none;
+  color: black;
+  padding: 4%;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: white;
+}
+
+.pagination_btn2{
+  border: none;
+  color: black;
+  padding: 4%;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: white;
 }

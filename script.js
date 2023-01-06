@@ -1,10 +1,10 @@
 const API_KEY = "8c8e1a50-6322-4135-8875-5d40a5420d86";
-const API_URL_POPULAR =
-  "https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=1";
+const BASE_API=
+  "https://kinopoiskapiunofficial.tech/api/v2.2/films/top?type=TOP_100_POPULAR_FILMS&page=";
 const API_URL_SEARCH =
   "https://kinopoiskapiunofficial.tech/api/v2.1/films/search-by-keyword?keyword=";
 
-getMovies(API_URL_POPULAR);
+getMovies(BASE_API);
 
 async function getMovies(url) {
   const resp = await fetch(url, {
@@ -73,6 +73,22 @@ form.addEventListener("submit", (e) => {
   const apiSearchUrl = `${API_URL_SEARCH}${search.value}`;
   if (search.value) {
     getMovies(apiSearchUrl);
+
+    search.value = "";
+  }
+});
+
+
+const pagination = document.querySelector("pagination");
+const paginationBtn1 = document.querySelector(".pagination_btn1");
+const paginationBtn2 = document.querySelector(".pagination_btn2");
+
+pagination.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const apiUrl = `${BASE_API}${paginationBtn1.value}`;
+  if (paginationBtn1.value) {
+    getMovies(apiUrl);
 
     search.value = "";
   }
