@@ -7,10 +7,6 @@ const API_URL_SEARCH =
 
 getMovies(BASE_API);
 
-// const pagination = document.querySelector("pagination");
-// const paginationBtn1 = document.querySelector("pagination_btn1");
-// const paginationBtn2 = document.querySelector("pagination_btn2");
-
 const previous = document.querySelector('.pagination_btn1')
 const next = document.querySelector('.pagination_btn2')
 
@@ -18,9 +14,9 @@ const next = document.querySelector('.pagination_btn2')
 previous.addEventListener('click', (e)=>{
   e.preventDefault();
 
-  const apihUrl = `${BASE_API}${page}`;
   if (page<=5 && page>1) {
     page--
+    const apihUrl = `${BASE_API}${page}`;
     getMovies(apihUrl);
     console.log(page)
     console.log(apihUrl)
@@ -29,19 +25,14 @@ previous.addEventListener('click', (e)=>{
 
 next.addEventListener('click', (e)=>{
   e.preventDefault();
-
-  const apihUrl = `${BASE_API}${page}`;
   if (page<5 && page>=1) {
     page++
+    const apihUrl = `${BASE_API}${page}`;
     getMovies(apihUrl);
-    console.log(page)
-    console.log(apihUrl)
   }
 })
 
 console.log(page)
-
-getMovies(BASE_API)
 
 async function getMovies(url) {
   const resp = await fetch(url, {
