@@ -9,7 +9,23 @@ getMovies(BASE_API);
 
 const previous = document.querySelector('.pagination_btn1')
 const next = document.querySelector('.pagination_btn2')
+const scrollMovie = document.querySelector('.pagination')
 
+var loadMore = function(){
+  for(var i = 0; i<5; i++){
+    page++
+    const apihUrl = `${BASE_API}${page}`;
+    getMovies(apihUrl);
+  }
+}
+
+scrollMovie.addEventListener('scroll', function(){
+  if(scrollMovie.scrollTop + scrollMovie.clientHeight >= scrollMovie.scrollHeight){
+    loadMore()
+  }
+})
+
+loadMore()
 
 previous.addEventListener('click', (e)=>{
   e.preventDefault();
@@ -18,8 +34,6 @@ previous.addEventListener('click', (e)=>{
     page--
     const apihUrl = `${BASE_API}${page}`;
     getMovies(apihUrl);
-    console.log(page)
-    console.log(apihUrl)
   }
 })
 
@@ -31,8 +45,6 @@ next.addEventListener('click', (e)=>{
     getMovies(apihUrl);
   }
 })
-
-console.log(page)
 
 async function getMovies(url) {
   const resp = await fetch(url, {
@@ -58,8 +70,7 @@ function getClassByRate(vote) {
 function showMovies(data) {
   const moviesEl = document.querySelector(".movies");
 
-  // Очищаем предыдущие фильмы
-  document.querySelector(".movies").innerHTML = "";
+  // document.querySelector(".movies").innerHTML = "";
 
   data.films.forEach((movie) => {
     const movieEl = document.createElement("div");
