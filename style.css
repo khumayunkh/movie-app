@@ -168,14 +168,14 @@ body {
 
 
 .pagination{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 12rem;
-  color: white;
+  position: fixed;
+  display: block;
+  width: 100px ;
+  height: 100px;
+  border: 1px solid red
 }
 
-.pagination_btn1{
+/* .pagination_btn1{
   border: none;
   color: black;
   padding: 4%;
@@ -191,4 +191,4 @@ body {
   border-radius: 5px;
   font-size: 18px;
   background-color: white;
-}
+} */

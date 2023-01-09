@@ -11,11 +11,14 @@ const previous = document.querySelector('.pagination_btn1')
 const next = document.querySelector('.pagination_btn2')
 const scrollMovie = document.querySelector('.pagination')
 
-var loadMore = function(){
+function loadMore(){
   for(var i = 0; i<5; i++){
     page++
     const apihUrl = `${BASE_API}${page}`;
     getMovies(apihUrl);
+    console.log(page)
+    console.log('hello')
+    console.log(apihUrl)
   }
 }
 
@@ -26,6 +29,7 @@ scrollMovie.addEventListener('scroll', function(){
 })
 
 loadMore()
+
 
 previous.addEventListener('click', (e)=>{
   e.preventDefault();
@@ -70,7 +74,7 @@ function getClassByRate(vote) {
 function showMovies(data) {
   const moviesEl = document.querySelector(".movies");
 
-  // document.querySelector(".movies").innerHTML = "";
+  // document.querySelector(".movies").innerHTML = "";\
 
   data.films.forEach((movie) => {
     const movieEl = document.createElement("div");
