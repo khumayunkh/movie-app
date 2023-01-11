@@ -56,10 +56,27 @@ body {
   position: relative;
   z-index: 2;
   padding: 1rem;
-  width: 80%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.registration{
+  width: 15rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.signup_btn{
+  padding: 5px 18px;
+  background-color: #E50914;
+  border-radius: 2px;
+  color: white;
+  cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
 }
 
 .logo{
