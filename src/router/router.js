@@ -1,5 +1,3 @@
-
-
 const route = (event) => {
     event = event || window.event;
     event.preventDefault();
@@ -8,7 +6,6 @@ const route = (event) => {
 };
 
 const routes = {
-    404: "/pages/404.html",
     "/": "/../index.html",
     "/login": "./../Login/login.html",
     "/signup": "/pages/lorem.html",

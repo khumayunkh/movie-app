@@ -2,7 +2,6 @@
 <html>
     <head>
         <script async defer src="./app.js"></script>
-        <script async defer src="./router/router.js"></script>
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
@@ -13,10 +12,14 @@
                     <h4 class="logo">Logo</h4>
                     <div class="registration">
                         <a href="/login" onclick="route()" class="signup_btn">Log In</a>
-                        <a href="/signup" class="signup_btn">Sign Up</a>
+                        <a href="/signup" onclick="route()" class="signup_btn">Sign Up</a>
                     </div>
                 </div>
                 <form class="form">
+                    <div class="header_title">
+                        <h1 class="title">Unlimited movies, shows, and more.</h1>
+                        <h2 class="subtitle">Watch anywhere. Cancel anytime.</h2>
+                    </div>
                     <input type="text" class="search_input" placeholder="Search..."/>
                 </form>
             </div>
@@ -28,5 +31,7 @@
                 <button class="pagination_btn2">next ></button>
             </div>
         </div>
+
+        <script src="./router/router.js"></script>
     </body>
 </html>
