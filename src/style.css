@@ -1,0 +1,192 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a191f;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
+.movie_container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.header{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 40rem;
+  justify-content: space-between;
+}
+
+.background{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: .3;
+  background-image: url('https://assets.nflxext.com/ffe/siteui/vlv3/7cee2527-d2cc-4cc9-99f6-d1375e72d46e/388bead7-65d5-497f-ad43-790a4412dc19/UZ-en-20230103-popsignuptwoweeks-perspective_alpha_website_large.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+}
+
+.form{
+  position: relative;
+  z-index: 2;
+  width: 35rem;
+  height: 40%;
+  justify-self: center;
+}
+
+.navbar{
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo{
+  position: relative;
+  z-index: 2;
+  font-size: 58px;
+  font-weight: 900;
+  color: #E50914;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.search_input{
+  box-sizing: border-box;
+  width: 100%;
+  font-family: inherit;
+  padding: 16px 20px 20px 20px;
+  height: 3rem;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+  color: #444;
+}
+
+.movies {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.movie {
+  width: 240px;
+  margin: 10px;
+  position: relative;
+}
+
+.movie__cover-inner {
+  position: relative;
+  height: 360px;
+}
+
+.movie__cover {
+  max-width: 100%;
+  height: 100%;
+}
+
+.movie__cover--darkened {
+  background-color: #000000;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  max-width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.movie__cover--darkened:hover {
+  background-color: grey;
+  cursor: pointer;
+}
+
+.movie__info {
+  padding: 10px 0px;
+}
+
+.movie__title {
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.movie__category {
+  font-size: 14px;
+  color: #ffd80e;
+}
+
+.movie__average {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 0;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a191f;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.movie__average--green {
+  border: 1px solid green;
+}
+
+.movie__average--orange {
+  border: 1px solid orange;
+}
+
+.movie__average--red {
+  border: 1px solid red;
+}
+
+
+.pagination{
+  display: flex;
+  gap: 2rem;
+  width: 20%;
+}
+
+.pagination_btn1{
+  border: none;
+  color: black;
+  padding: 4%;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: white;
+}
+
+.pagination_btn2{
+  border: none;
+  color: black;
+  padding: 4%;
+  border-radius: 5px;
+  font-size: 18px;
+  background-color: white;
+}
