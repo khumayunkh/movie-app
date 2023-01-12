@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script async defer src="./app.js"></script>
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
-        <div class="container">
-            <div class="header">
-                <div class='background'></div>
-                <div class="navbar">
-                    <h4 class="logo">Logo</h4>
-                    <div class="registration">
-                        <a href="/login" onclick="route()" class="signup_btn">Log In</a>
-                        <a href="/signup" onclick="route()" class="signup_btn">Sign Up</a>
+        <div id="main-page">
+            <div class="container">
+                <div class="header">
+                    <div class='background'></div>
+                    <div class="navbar">
+                        <h4 class="logo">Logo</h4>
+                        <div class="registration">
+                            <a href="/login" onclick="route()" class="signup_btn">Log In</a>
+                            <a href="/signup" onclick="route()" class="signup_btn">Sign Up</a>
+                        </div>
                     </div>
+                    <form class="form">
+                        <div class="header_title">
+                            <h1 class="title">Unlimited movies, shows, and more.</h1>
+                            <h2 class="subtitle">Watch anywhere. Cancel anytime.</h2>
+                        </div>
+                        <input type="text" class="search_input" placeholder="Search..."/>
+                    </form>
                 </div>
-                <form class="form">
-                    <div class="header_title">
-                        <h1 class="title">Unlimited movies, shows, and more.</h1>
-                        <h2 class="subtitle">Watch anywhere. Cancel anytime.</h2>
-                    </div>
-                    <input type="text" class="search_input" placeholder="Search..."/>
-                </form>
-            </div>
-            <div class="movie_container">
-                <div class="movies"></div>
-            </div>
-            <div class="pagination">
-                <button class="pagination_btn1">< previous</button>
-                <button class="pagination_btn2">next ></button>
+                <div class="movie_container">
+                    <div class="movies"></div>
+                </div>
+                <div class="pagination">
+                    <button class="pagination_btn1">< previous</button>
+                    <button class="pagination_btn2">next ></button>
+                </div>
             </div>
         </div>
-
-        <script src="./router/router.js"></script>
+        <script async src="./router/router.js"></script>
     </body>
 </html>
