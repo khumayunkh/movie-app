@@ -2,14 +2,14 @@
 <html>
     <head>
         <script async src="./router/router.js"></script>
-        <link rel="stylesheet" href="./Login/login.css">
-        <script defer src="./../app.js"></script>
+        <link rel="stylesheet" href="./SignUp/signUp.css">
+        <script async defer src="./SignUp/signUp.js"></script>
     </head>
     </head>
     <body>
         <div class="container">
             <div class="content">
-                <h1 class="title">Login</h1> 
+                <h1 class="title">Create an account</h1> 
                 <div class="form">
                     <div class="form__group field">
                         <input type="input" class="form__field" placeholder="Username" required />
@@ -20,9 +20,10 @@
                 </div>
                 <div class="buttons">
                     <input class="submit" type='submit'/>
-                    <a href="/signup" onclick="route()">Haven't an account</a>
+                    <a href="/login" onclick="route()">Have an account?</a>
                 </div>
             </div>
         </div>
+        <script async defer src="./SignUp/signUp.js"></script>
     </body>
 </html>
