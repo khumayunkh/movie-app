@@ -1,4 +1,4 @@
-function a(b){
+export default function a(b){
     return b+2
 }
 
