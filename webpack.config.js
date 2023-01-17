@@ -2,35 +2,46 @@ const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
+pages = ['index', 'Login/login']
+
 module.exports = {
-    entry: [{'/' :'./src/app.js'}, {'/login': './src/Login/login.js'}],
+    entry: pages.reduce((config, page) => {
+      config[page] = `./src/${page}.js`;
+      return config;
+    }, {}),
     output: {
         filename: 'bundle.[chunkhash].js',
-        path: path.resolve(__dirname, 'public')
+        path: path.resolve(__dirname, 'public'),
+        clean: true
     },
     devServer: {
         port: 3000
     },
-    plugins: [
-        new HTMLPlugin({
-          template: 'src/index.html',
-          filename: 'index.html',
-          chunks: ['main'],
-          inject: true
-        }),
-        new HTMLPlugin({
-          template: './src/Login/login.html',
-          filename: 'login.html',
-          chunks: ['login'],
-          inject: true
-        }),
-        new CleanWebpackPlugin()
-      ],
+    optimization: {
+      splitChunks: {
+        chunks: "all",
+      },
+    },
+    plugins: [].concat(
+      pages.map(
+        (page) =>
+          new HTMLPlugin({
+            inject: true,
+            template: `src/${page}.html`,
+            filename: `${page}.html`,
+            chunks: [page],
+          })
+      ),
+    ),
       module: {
         rules: [
           {
             test: /\.css$/i,
             use: ['style-loader', 'css-loader'],
+          },
+          {
+            test: /\.html$/,
+            loader: 'html-loader'
           },
           {
             test: /\.m?js$/,
@@ -44,5 +55,6 @@ module.exports = {
             }
           }
         ],
+        
     },
 }
