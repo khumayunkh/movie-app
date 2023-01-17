@@ -2,7 +2,7 @@ const path = require('path')
 const HTMLPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-pages = ['index', 'Login/login']
+pages = ['index', 'Login/login', 'SignUp/signUp']
 
 module.exports = {
     entry: pages.reduce((config, page) => {
