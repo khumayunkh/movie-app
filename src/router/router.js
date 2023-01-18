@@ -4,6 +4,7 @@ const route = (event) => {
     window.history.pushState({}, "", event.target.href);
     handleLocation();
 };
+console.log('wqewq')
 
 const routes = {
     "/": "/../index.html",

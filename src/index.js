@@ -1,5 +1,6 @@
 import './style.css'
-import './router/router.js'
+import './Login/login.js'
+import './SignUp/signUp.js'
 import './index.html'
 
 let page = 1
