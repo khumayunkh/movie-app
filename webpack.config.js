@@ -10,9 +10,8 @@ module.exports = {
       return config;
     }, {}),
     output: {
-        filename: 'bundle.[chunkhash].js',
+        filename: '[name].js',
         path: path.resolve(__dirname, 'public'),
-        clean: true
     },
     devServer: {
         port: 3000

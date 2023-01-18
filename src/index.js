@@ -1,7 +1,6 @@
 import './style.css'
 import './Login/login.js'
 import './SignUp/signUp.js'
-import './index.html'
 
 let page = 1
 const API_KEY = "8c8e1a50-6322-4135-8875-5d40a5420d86";
@@ -115,13 +114,15 @@ function showMovies(data) {
 const form = document.querySelector("form");
 const search = document.querySelector(".search_input");
 
+search.document.addEventListener("input", x => console.log(x.target.value))
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
   const apiSearchUrl = `${API_URL_SEARCH}${search.value}`;
   if (search.value) {
     getMovies(apiSearchUrl);
-
     search.value = "";
   }
 });
+
