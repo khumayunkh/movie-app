@@ -31,6 +31,7 @@ module.exports = {
             chunks: [page],
           })
       ),
+      CleanWebpackPlugin()
     ),
       module: {
         rules: [
